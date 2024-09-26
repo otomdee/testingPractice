@@ -33,6 +33,29 @@ export function caesarCipher(string, key) {
     return cipher;
 }
 
+export function analyzeArray(array) {
+    //average
+    let average = 0;
+    let min = array[0];
+    let max = array[0];
+    array.forEach((item) => {
+        average += item;
+        if (item < min) {
+            min = item;
+        }
+        if (item > max) {
+            max = item;
+        }
+    })
+    average = Math.floor(average/array.length);
+    return {
+        average: average,
+        min: min,
+        max: max,
+        length: array.length
+     };
+}
+
 function shiftChar(char, key) {
     let charCode = char.charCodeAt(0);
 

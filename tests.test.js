@@ -2,7 +2,8 @@ import {
     capitalize,
     reverseString,
     calculator,
-    caesarCipher
+    caesarCipher,
+    analyzeArray
 } from "./tests.js";
 
 test('capitalize', () => {
@@ -43,4 +44,20 @@ test("cipher case preservation", () => {
 
 test("cipher case preservation", () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+})
+
+test("analyze array average", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
+})
+
+test("analyze array min", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1);
+})
+
+test("analyze array max", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
+})
+
+test("analyze array length", () => {
+    expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6);
 })
